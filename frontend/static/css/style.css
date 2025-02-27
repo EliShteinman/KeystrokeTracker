@@ -1,0 +1,355 @@
+/* style.css */
+
+/* משתני CSS לעיצוב עקבי */
+:root {
+    --bg-color: #f4f4f4;
+    --primary-bg: rgba(255, 255, 255, 0.581);
+    --hover-bg: #ddd;
+    --border-color: #ddd;
+    --header-bg: #fff;
+    --header-opacity: 0.581;
+}
+
+/* הגדרות כלליות - כיוון RTL, טיפוגרפיה ורקע */
+html, body {
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../images/0FABCE05-4EA3-4883-8852-41B09D8950C1.png");
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+/* הסתרת אלמנטים */
+.hidden {
+    display: none;
+}
+
+/* מכולת הדף */
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+/* כותרות */
+h1 {
+    background: var(--primary-bg);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+    padding: 10px;
+}
+h2, label {
+    text-align: center;
+}
+
+/* רשימת המחשבים */
+.computer-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    gap: 10px;
+    margin-top: 10px;
+}
+.computer-card {
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 150px;
+}
+.computer-card:hover {
+    background-color: var(--hover-bg);
+}
+.button_list {
+    text-align: center;
+    zoom: 1.5;
+}
+
+/* טבלה להצגת הנתונים */
+.table, #output {
+    background: var(--primary-bg);
+    text-align: center;
+    overflow-x: auto;
+}
+
+#data-table {
+    width: 100%;
+    table-layout: fixed;
+    background-color: var(--bg-color);
+    border-collapse: collapse;
+    margin: 20px 0;
+    direction: ltr;
+    text-align: left;
+}
+
+#data-table th, #data-table td {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+#data-table th {
+    background-color: #e0e0e0;
+}
+#data-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+#data-table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--header-bg);
+    z-index: 1;
+}
+
+/* קביעת רוחב לעמודות הקטנות */
+#data-table th:nth-child(1),
+#data-table td:nth-child(1),
+#data-table th:nth-child(2),
+#data-table td:nth-child(2),
+#data-table th:nth-child(3),
+#data-table td:nth-child(3),
+#data-table th:nth-child(4),
+#data-table td:nth-child(4),
+#data-table th:nth-child(5),
+#data-table td:nth-child(5) {
+    width: 80px;
+}
+#data-table th:nth-child(6),
+#data-table td:nth-child(6) {
+    width: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* תצוגת טקסט */
+#output {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 100%;
+    padding: 10px;
+}
+
+/* סקשן סינון */
+#filter_section {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* חלון מודאל */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal.hidden {
+    display: none;
+}
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+/* הדגשת שורות עם חיפוש */
+.highlight {
+    background-color: yellow;
+}
+
+/* כפתורי ניווט */
+.nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+.nav-link:hover {
+    background-color: #0056b3;
+}
+
+/* עיצוב טפסים */
+form {
+    margin-bottom: 30px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="password"] {
+    margin-bottom: 10px;
+    padding: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    direction: ltr;
+}
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
+}
+
+/* כפתור "טען משתמשים" */
+#load-users-button {
+    margin-bottom: 10px;
+}
+
+/* רשימת משתמשים */
+#user-list {
+    list-style-type: none;
+    padding: 0;
+}
+#user-list li {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* עיצוב סקשנים */
+section {
+    margin-bottom: 20px;
+}
+.body1 {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.header1 {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+}
+.user-form-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+  }
+  .nav-bar a,
+  .nav-bar button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .nav-bar a:hover,
+  .nav-bar button:hover {
+    background-color: #0056b3;
+  }
+  .disconnect-button {
+    background-color: #dc3545;
+  }
+  .disconnect-button:hover {
+    background-color: #c82333;
+  }
+  .container1 {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.inputlg[type="text"], .inputlg[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.button1 {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.input1[type="text"], .input1[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.github-link {
+    display: block;
+    margin: 20px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+.github-link:hover {
+    text-decoration: underline;
+}
+
+
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
+
+#error-message {
+    color: red;
+    display: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.nav-link1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px 5px;
+}

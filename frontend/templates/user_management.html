@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ניהול משתמשים</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- סרגל ניווט בראש הדף -->
+    <div class="nav-bar">
+      <a href="/" class="nav-link">חזרה לדף הראשי</a>
+      <button id="disconnect-button" class="disconnect-button">ניתוק</button>
+    </div>
+
+    <h1>ניהול משתמשים</h1>
+
+    <!-- טופס להוספת משתמש -->
+    <section id="add-user-section" class="user-form-section">
+      <h2>הוסף משתמש חדש</h2>
+      <form id="add-user-form">
+        <label for="add-username">שם משתמש:</label>
+        <input type="text" id="add-username" name="username" required>
+        <label for="add-password">סיסמה:</label>
+        <input type="password" id="add-password" name="password" required>
+        <button type="submit">הוסף משתמש</button>
+      </form>
+    </section>
+
+    <!-- טופס לעדכון סיסמה -->
+    <section id="update-user-section" class="user-form-section">
+      <h2>עדכן סיסמה</h2>
+      <form id="update-user-form">
+        <label for="update-username">שם משתמש:</label>
+        <input type="text" id="update-username" name="username" required>
+        <label for="new-password">סיסמה חדשה:</label>
+        <input type="password" id="new-password" name="newPassword" required>
+        <button type="submit">עדכן סיסמה</button>
+      </form>
+    </section>
+
+    <!-- רשימת משתמשים -->
+    <section id="user-list-section" class="user-form-section">
+      <h2>רשימת משתמשים</h2>
+      <button id="load-users-button">טען משתמשים</button>
+      <ul id="user-list"></ul>
+    </section>
+
+    <!-- טופס להסרת משתמש -->
+    <section id="remove-user-section" class="user-form-section">
+      <h2>הסר משתמש</h2>
+      <form id="remove-user-form">
+        <label for="remove-username">שם משתמש:</label>
+        <input type="text" id="remove-username" name="username" required>
+        <button type="submit">הסר משתמש</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- טעינת קובץ ה-JS לניהול משתמשים -->
+  <script src="../static/js/user_management.js" defer></script>
+</body>
+</html>
